@@ -1,9 +1,7 @@
 import React from 'react';
 
 const PriceRange = ({handelChange}) => {
-    // const handelChange = (e) => {
-    //     console.log(e)
-    // }
+
     return (
         <div className='pb-10'>
             <h1 className='  py-3 text-sm text-gray-900 hover:text-gray-500 font-medium dark:text-white'>Price</h1>

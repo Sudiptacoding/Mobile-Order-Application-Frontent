@@ -5,8 +5,7 @@ import Marquee from 'react-fast-marquee';
 import { useNavigate } from 'react-router-dom';
 
 const ShopCategory = () => {
-    const { isPending, error, phone, refetch } = useAllData();
-    console.log(phone)
+    const {  phone } = useAllData();
     const navigate = useNavigate()
     const handelMore = (id) => {
         navigate(`/moredetails/${id}`)

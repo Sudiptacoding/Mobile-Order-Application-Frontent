@@ -51,7 +51,6 @@ const Registration = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const checkbox = e.target.checkbox.checked;
-        console.log(name, photo)
 
         if (!checkbox) {
             toast.error("Please add Terms and Conditions")
@@ -73,7 +72,7 @@ const Registration = () => {
                             const data = {
                                 email: user?.user?.email
                             }
-                            console.log(data)
+
                             axiosAuth.post('/user', data)
                                 .then(res => {
                                     swal("Varify email!", `Check your email and confirm now`, "success");

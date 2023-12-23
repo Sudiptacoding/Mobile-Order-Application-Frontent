@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import useAllData from '../hooks/useAllData'
-import Swal from 'sweetalert2'
 import Loader from './Loader'
 import { Link } from 'react-router-dom'
 
@@ -22,7 +21,6 @@ function SearchData() {
     }
 
     const handleOnSelect = (item) => {
-        console.log(item)
         setData(item)
         document.getElementById('my_modal_7').showModal()
     }

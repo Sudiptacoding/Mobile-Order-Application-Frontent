@@ -9,7 +9,6 @@ import TopPopulation from './TopPopulation/TopPopulation';
 
 const Home = () => {
     const { isPending, error, course } = useAllData();
-    console.log(course)
     if (isPending) return <Loader></Loader>
     if (error) return 'An error has occurred: ' + error.message
 
