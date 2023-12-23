@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cursive {
+    font-family: 'Cedarville Cursive', cursive;
+}
+
+.shop {
+    font-family: 'Public Sans', sans-serif;
+
+}
