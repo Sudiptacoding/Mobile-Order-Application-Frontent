@@ -8,6 +8,7 @@ import swal from 'sweetalert';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import axios from 'axios';
 import useAxios from '../../hooks/useAxios';
+import Header from '../../components/Header/Header';
 
 const Registration = () => {
     const { createUser, setUserPhoto } = useContext(UserProvider)
@@ -91,8 +92,9 @@ const Registration = () => {
     }
     return (
         <div>
+            <Header></Header>
             <section className="">
-                <div className="flex flex-col items-center justify-start h-screen py-5 mx-auto rounded-lg shadow lg:pt-20 dark:border dark:bg-gray-800 dark:border-gray-700">
+                <div className="flex flex-col items-center justify-start py-5 mx-auto shadow lg:pt-5 dark:border dark:bg-gray-800 dark:border-gray-700">
                     <div className="w-full rounded-lg shadow-none lg:shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 backdrop-blur-xl">
                         <div className="space-y-4 p-7 lg:p-6 md:space-y-6 ">
                             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">

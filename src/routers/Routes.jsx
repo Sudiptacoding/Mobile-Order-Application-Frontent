@@ -9,6 +9,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Details from "../pages/Details/Details";
 import About from "../pages/About/About";
 import AllPhoneList from "../pages/AllPhoneList/AllPhoneList";
+import AllPhonDeta from "../pages/AllPhonDeta/AllPhonDeta";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <ProtectedRoute><About></About></ProtectedRoute>,
+            },
+            {
+                path: "/allphondata",
+                element: <ProtectedRoute><AllPhonDeta></AllPhonDeta></ProtectedRoute>,
             }
         ],
     },

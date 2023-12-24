@@ -6,6 +6,7 @@ import auth from '../../firebase/firebase.config';
 import toast from 'react-hot-toast';
 import swal from 'sweetalert';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import Header from '../../components/Header/Header';
 
 
 
@@ -53,8 +54,9 @@ const Login = () => {
 
     return (
         <div>
+            <Header></Header>
             <section className="">
-                <div className="flex flex-col items-center justify-start h-screen py-20 mx-auto rounded-lg shadow lg:px-6 lg:py-28 dark:border dark:bg-gray-800 dark:border-gray-700" >
+                <div className="flex flex-col items-center justify-start h-screen py-20 mx-auto rounded-lg shadow lg:px-6 lg:py-10 dark:border dark:bg-gray-800 dark:border-gray-700" >
                     <div className="w-full bg-white rounded-lg shadow-none backdrop-blur-xl lg:shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                         <div className="space-y-4 p-7 lg:p-6 md:space-y-6">
                             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">

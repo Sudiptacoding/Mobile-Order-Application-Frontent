@@ -140,16 +140,16 @@ export default function CategorySection() {
                                 leaveFrom="translate-x-0"
                                 leaveTo="translate-x-full"
                             >
-                                <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
+                                <Dialog.Panel className="relative flex flex-col w-full h-full max-w-xs py-4 pb-12 ml-auto overflow-y-auto bg-white shadow-xl">
                                     <div className="flex items-center justify-between px-4">
                                         <h2 className="text-lg font-medium text-gray-900">Filters</h2>
                                         <button
                                             type="button"
-                                            className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
+                                            className="flex items-center justify-center w-10 h-10 p-2 -mr-2 text-gray-400 bg-white rounded-md"
                                             onClick={() => setMobileFiltersOpen(false)}
                                         >
                                             <span className="sr-only">Close menu</span>
-                                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                                            <XMarkIcon className="w-6 h-6" aria-hidden="true" />
                                         </button>
                                     </div>
 
@@ -172,17 +172,17 @@ export default function CategorySection() {
                                         </ul>
 
                                         {filters.map((section) => (
-                                            <Disclosure as="div" key={section.id} className="border-t border-gray-200 px-4 py-6">
+                                            <Disclosure as="div" key={section.id} className="px-4 py-6 border-t border-gray-200">
                                                 {({ open }) => (
                                                     <>
-                                                        <h3 className="-mx-2 -my-3 flow-root">
-                                                            <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
+                                                        <h3 className="flow-root -mx-2 -my-3">
+                                                            <Disclosure.Button className="flex items-center justify-between w-full px-2 py-3 text-gray-400 bg-white hover:text-gray-500">
                                                                 <span className="font-medium text-gray-900">{section.name}</span>
-                                                                <span className="ml-6 flex items-center">
+                                                                <span className="flex items-center ml-6">
                                                                     {open ? (
-                                                                        <MinusIcon className="h-5 w-5" aria-hidden="true" />
+                                                                        <MinusIcon className="w-5 h-5" aria-hidden="true" />
                                                                     ) : (
-                                                                        <PlusIcon className="h-5 w-5" aria-hidden="true" />
+                                                                        <PlusIcon className="w-5 h-5" aria-hidden="true" />
                                                                     )}
                                                                 </span>
                                                             </Disclosure.Button>
@@ -197,11 +197,11 @@ export default function CategorySection() {
                                                                             defaultValue={option.value}
                                                                             type="radio"
                                                                             defaultChecked={option.checked}
-                                                                            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                                                            className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
                                                                         />
                                                                         <label
                                                                             htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                                                                            className="ml-3 min-w-0 flex-1 text-gray-500"
+                                                                            className="flex-1 min-w-0 ml-3 text-gray-500"
                                                                         >
                                                                             {option.label}
                                                                         </label>
@@ -221,24 +221,29 @@ export default function CategorySection() {
                     </Dialog>
                 </Transition.Root>
 
-                <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
+                <main className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                    <div className="flex items-baseline justify-between pt-24 pb-6 border-b border-gray-200">
                         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">New Arrivals</h1>
 
                         <div className="flex items-center">
 
+                            <Link to='/allphondata' class="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 cursor-pointer  font-medium">
+                                All products
+                                <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                            </Link>
+
                             <button
                                 type="button"
-                                className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
+                                className="p-2 ml-4 -m-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
                                 onClick={() => setMobileFiltersOpen(true)}
                             >
                                 <span className="sr-only">Filters</span>
-                                <FunnelIcon className="h-5 w-5" aria-hidden="true" />
+                                <FunnelIcon className="w-5 h-5" aria-hidden="true" />
                             </button>
                         </div>
                     </div>
 
-                    <section aria-labelledby="products-heading" className=" pt-6">
+                    <section aria-labelledby="products-heading" className="pt-6 ">
                         <h2 id="products-heading" className="sr-only">
                             Products
                         </h2>
@@ -247,7 +252,7 @@ export default function CategorySection() {
                             {/* Filters */}
                             <form className="hidden lg:block">
                                 <h3 className="sr-only">Categories</h3>
-                                <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900 dark:text-white cursor-pointer">
+                                <ul role="list" className="pb-6 space-y-4 text-sm font-medium text-gray-900 border-b border-gray-200 cursor-pointer dark:text-white">
                                     {subCategories.map((category) => (
                                         <li onClick={() => handelPhonName(category.name)} key={category.name}>
                                             <a className="block px-2 ">
@@ -263,17 +268,17 @@ export default function CategorySection() {
                                 </ul>
 
                                 {filters.map((section) => (
-                                    <Disclosure as="div" key={section.id} className="border-b border-gray-200 py-6">
+                                    <Disclosure as="div" key={section.id} className="py-6 border-b border-gray-200">
                                         {({ open }) => (
                                             <>
-                                                <h3 className="-my-3 flow-root">
-                                                    <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
+                                                <h3 className="flow-root -my-3">
+                                                    <Disclosure.Button className="flex items-center justify-between w-full py-3 text-sm text-gray-400 bg-white hover:text-gray-500">
                                                         <span className="font-medium text-gray-900">{section.name}</span>
-                                                        <span className="ml-6 flex items-center">
+                                                        <span className="flex items-center ml-6">
                                                             {open ? (
-                                                                <MinusIcon className="h-5 w-5" aria-hidden="true" />
+                                                                <MinusIcon className="w-5 h-5" aria-hidden="true" />
                                                             ) : (
-                                                                <PlusIcon className="h-5 w-5" aria-hidden="true" />
+                                                                <PlusIcon className="w-5 h-5" aria-hidden="true" />
                                                             )}
                                                         </span>
                                                     </Disclosure.Button>
@@ -288,7 +293,7 @@ export default function CategorySection() {
                                                                     defaultValue={option.value}
                                                                     type="radio"
                                                                     onChange={(e) => handelPhonName(e.target.value)}
-                                                                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                                                    className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
                                                                 />
                                                                 <label
                                                                     htmlFor={`filter-${section.id}-${optionIdx}`}
@@ -312,15 +317,15 @@ export default function CategorySection() {
                             {/* Product grid */}
                             <div className="lg:col-span-3">
                                 {
-                                    phoneData?.length > 0 ? <div className='flex flex-wrap gap-4 w-full items-center justify-center'>
+                                    phoneData?.length > 0 ? <div className='flex flex-wrap items-center justify-center w-full gap-4'>
                                         {
-                                            phoneData?.map((item, i) => {
+                                            phoneData?.slice(0,12).map((item, i) => {
                                                 return <div key={i} className='md:w-[202px] w-full  p-4 border border-[#E4E7E9] rounded-sm relative '>
                                                     <span className='absolute top-2 z-20 bg-[#EFD33D] rounded-sm left-2 px-3 text-[#191C1F] text-[12px] py-1 font-semibold'>{item?.discount}% OFF</span>
                                                     <div className="relative overflow-hidden">
-                                                        <div className="group relative">
+                                                        <div className="relative group">
                                                             <img src={item?.phonImage} alt="Image" className="lg:w-[202px] lg:h-[172px] w-full transform transition-transform duration-300 group-hover:scale-110" />
-                                                            <div className="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                                                            <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100">
                                                                 <Link to={`/moredetails/${item?._id}`} className=''>
                                                                     <span class="mt-2 inline-flex items-center gap-x-1 text-sm text-white  decoration-2 cursor-pointer font-medium">
                                                                         Learn more
@@ -335,7 +340,7 @@ export default function CategorySection() {
                                                         <h1 className='text-[#191C1F] text-sm font-semibold dark:text-white'>{item?.type}</h1>
                                                     </div>
                                                     <div>
-                                                        <h3 className='text-gray-900 text-sm font-bold'>${item?.price} USD</h3>
+                                                        <h3 className='text-sm font-bold text-gray-900'>${item?.price} USD</h3>
                                                     </div>
 
                                                 </div>
